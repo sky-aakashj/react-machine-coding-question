@@ -1,8 +1,8 @@
 # React + Vite
 
 # React Product listing with Pagination
+Fetch product data from https://dummyjson.com/products and display products with pagination feature
 
-This React application provides a flexible file explorer component for managing hierarchical data structures. It supports creating, editing, and deleting folders and files within a tree-like structure.
 
 **Key Features:**✨
 
@@ -13,7 +13,7 @@ This React application provides a flexible file explorer component for managing 
 **Installation**
 
 ```bash
-git clone https://github.com/sky-aakashj/react-machine-coding-question/tree/main/file-explorer
+git clone https://github.com/sky-aakashj/react-machine-coding-question/tree/main/product-pagination
 cd product-pagination
 npm install
 npm run dev
