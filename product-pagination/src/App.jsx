@@ -5,7 +5,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
-  const itemPerPage = 10;
+  const itemPerPage = 6;
 
   const fetchProducts = async () => {
     const res = await fetch(
@@ -30,13 +30,49 @@ function App() {
     }
   };
 
+  const renderPagination = () => {
+    const pageNumbers = [];
+    const startPage = Math.max(1, page - 2);
+    const endPage = Math.min(startPage + 4, totalPages);
+
+    for (let i = startPage; i <= endPage; i++) {
+      pageNumbers.push(i);
+    }
+
+    return (
+      <div className="pagination">
+        <span
+          className={page > 1 ? "" : "pagination__disabled"}
+          onClick={() => selectPageHandler(page - 1)}
+        >
+          ◀
+        </span>
+        {pageNumbers.map((pageNumber) => (
+          <span
+            key={pageNumber}
+            className={pageNumber === page ? "active" : ""}
+            onClick={() => selectPageHandler(pageNumber)}
+          >
+            {pageNumber}
+          </span>
+        ))}
+        <span
+          className={page < totalPages ? "" : "pagination__disabled"}
+          onClick={() => selectPageHandler(page + 1)}
+        >
+          ▶
+        </span>
+      </div>
+    );
+  };
+
   useEffect(() => {
     fetchProducts();
   }, [page]);
 
   return (
     <>
-      <h1> Product listing</h1>
+      <h1 style={{ textAlign: "center" }}> Product listing</h1>
       <div>
         {products && (
           <div className="products">
@@ -48,39 +84,7 @@ function App() {
             ))}
           </div>
         )}
-        {products.length > 0 && (
-          <div className="pagination">
-            <span
-              className={page > 1 ? "" : "pagination__disabled"}
-              onClick={() => {
-                selectPageHandler(page - 1);
-              }}
-            >
-              ◀
-            </span>
-            {[...Array(totalPages)].map((_, i) => {
-              return (
-                <span
-                  className={page === i + 1 ? "active" : ""}
-                  key={i}
-                  onClick={() => {
-                    selectPageHandler(i + 1);
-                  }}
-                >
-                  {i + 1}
-                </span>
-              );
-            })}
-            <span
-              className={page < totalPages ? "" : "pagination__disabled"}
-              onClick={() => {
-                selectPageHandler(page + 1);
-              }}
-            >
-              ▶
-            </span>
-          </div>
-        )}
+        {products.length > 0 && renderPagination()}
       </div>
     </>
   );
