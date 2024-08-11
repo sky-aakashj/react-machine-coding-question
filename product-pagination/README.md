@@ -1,8 +1,22 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# React Product listing with Pagination
 
-Currently, two official plugins are available:
+This React application provides a flexible file explorer component for managing hierarchical data structures. It supports creating, editing, and deleting folders and files within a tree-like structure.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Key Features:**✨
+
+-Intuitive product listing: Clear and organized display of product information.
+-Efficient pagination: Seamlessly load product data for each page.
+-Dynamic pagination
+
+**Installation**
+
+```bash
+git clone https://github.com/sky-aakashj/react-machine-coding-question/tree/main/file-explorer
+cd product-pagination
+npm install
+npm run dev
+```
+![pagination](https://github.com/user-attachments/assets/78c5b99a-b1e0-4610-b43d-04d90eaa7806)
+
