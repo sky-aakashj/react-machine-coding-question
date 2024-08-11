@@ -2,9 +2,10 @@
 
 # React File Explorer
 
-**Credits:** https://www.youtube.com/watch?v=20F_KzHPpvI&list=PLKhlp2qtUcSZiWKJTi5-5r6IRdHhxP9ZU&index=2&t=1619s
-
 This React application provides a flexible file explorer component for managing hierarchical data structures. It supports creating, editing, and deleting folders and files within a tree-like structure.
+
+![file-explorer](https://github.com/user-attachments/assets/2b877738-ae53-42d7-9a92-8a859ef34bc1)
+
 
 **Key Features:**✨
 
