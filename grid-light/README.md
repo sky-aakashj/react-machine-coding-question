@@ -1,8 +1,22 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 3x3 Grid Activation (React Project)
 
-Currently, two official plugins are available:
+This React project builds a dynamic 3x3 grid where users can click and activate individual cells, turning them green. Once all cells are activated, a unique twist occurs: clicking any cell triggers a deactivation sequence, reversing the activation order and visually deactivating cells one by one.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+* Interactive 3x3 grid with clickable cells.
+* Clicks activate cells, changing their color to green.
+* Deactivation sequence in reverse order upon full activation.
+* Built entirely with React and JavaScript.
+
+
+**Installation**
+
+```bash
+git clone https://github.com/sky-aakashj/react-machine-coding-question/tree/main/grid-light
+cd grid-light
+npm install
+npm run dev
+```
+![grid](https://github.com/user-attachments/assets/3ada0d2b-0539-4334-b085-6f931d9addb0)
