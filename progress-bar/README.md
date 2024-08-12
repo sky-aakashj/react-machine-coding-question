@@ -1,8 +1,15 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Progress Bar App Using React
 
-Currently, two official plugins are available:
+**Installation**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+git clone https://github.com/sky-aakashj/react-machine-coding-question/tree/main/progress-bar
+cd progress-bar
+npm install
+npm run dev
+```
+
+![progress1bar1](https://github.com/user-attachments/assets/0c53dad3-bf2f-47e1-ab7e-431c02ca79a0)
+![progressbar2](https://github.com/user-attachments/assets/3e205345-0086-46ff-8a0a-e86287107298)
