@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif;
+}
+h1 {
+  text-align: center;
+}
+.user-search-container {
+  display: flex;
+}
+.user-search-input {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+.user-search-input input {
+  border: none;
+  height: 20px;
+  padding: 5px;
+}
+.user-search-input input:focus {
+  outline: none;
+}
