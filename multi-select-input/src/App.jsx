@@ -42,7 +42,13 @@ function App() {
           />
           <ul className="suggetstion-list">
             {searchSuggestions?.users?.map((user) => (
-              <li key={user.id}>{user.firstName}</li>
+              <li key={user.id}>
+                <img
+                  src={user.image}
+                  alt={`${user.firstName} ${user.lastName}`}
+                />
+                <span>{user.firstName}</span>
+              </li>
             ))}
           </ul>
         </div>
