@@ -45,3 +45,14 @@ h1 {
   cursor: pointer;
   border: 1px solid #ccc;
 }
+.suggetstion-list li:last-child {
+  border-bottom: none;
+}
+
+.suggetstion-list li:hover {
+  background-color: #ccc;
+}
+
+.suggetstion-list li img {
+  height: 20px;
+}

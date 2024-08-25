@@ -4,6 +4,8 @@ import "./App.css";
 function App() {
   const [searchValues, setSearchValues] = useState("");
   const [searchSuggestions, setSearchSuggestions] = useState([]);
+  const [selectedUser, setSelectedUser] = useState([]);
+
   // 'https://dummyjson.com/users/search?q=John'
   const handleInputChange = (value) => {
     setSearchValues(value);
