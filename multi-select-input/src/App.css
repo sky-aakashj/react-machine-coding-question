@@ -6,16 +6,18 @@ h1 {
 }
 .user-search-container {
   display: flex;
+  justify-content: center;
+  position: relative;
 }
 .user-search-input {
   display: flex;
-  width: 100%;
+  width: 50%;
   align-items: center;
   gap: 5px;
   flex-wrap: wrap;
   padding: 5px;
   border: 1px solid #ccc;
-  border-radius: 20px;
+  border-radius: 4px;
 }
 .user-search-input input {
   border: none;
@@ -29,13 +31,13 @@ h1 {
   position: absolute;
   list-style: none;
   max-height: 300px;
+  width: 50%;
   border: 1px solid grey;
   background-color: white;
   margin: 0px;
   overflow-y: scroll;
   padding: 0px;
-  top: 117px;
-  left: 30px;
+  top: 42px;
 }
 .suggetstion-list li {
   display: flex;
@@ -55,4 +57,19 @@ h1 {
 
 .suggetstion-list li img {
   height: 20px;
+}
+
+.user-pill {
+  display: flex;
+  background-color: black;
+  color: #fff;
+  align-items: center;
+  gap: 5px;
+  border-radius: 20px;
+  padding: 5px 10px;
+  height: 20px;
+  cursor: pointer;
+}
+.user-pill img {
+  height: 100%;
 }
