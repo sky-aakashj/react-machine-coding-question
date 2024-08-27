@@ -7,6 +7,7 @@ function App() {
   const [searchSuggestions, setSearchSuggestions] = useState([]);
   const [selectedUser, setSelectedUser] = useState([]);
   const [selectedUserSet, setSelectedUserSet] = useState(new Set());
+  const [activeNavUser, setActiveNavUser] = useState(-1);
   const ref = useRef(null);
   let timerRef = useRef(null);
 
@@ -61,10 +62,25 @@ function App() {
     ref.current.focus();
   };
   const handleRemovePill = (e) => {
+    //this is for when user click backspace to remove pills from input
     if (e.keyCode == 8 && !searchValues && selectedUser) {
       const deletedUser = selectedUser[selectedUser.length - 1];
       handleRemove(deletedUser);
       setSearchSuggestions([]);
+    } else if (e.keyCode == 40 && searchSuggestions) {
+      //this is for navigation inside the seachsuggestion when down arrow key pressed
+      setActiveNavUser((prev) => (prev + 1) % searchSuggestions.users.length);
+    } else if (e.keyCode == 38 && searchSuggestions) {
+      //this is for navigation inside the seachsuggestion when up arrow key pressed
+      if (activeNavUser <= 0) {
+        setActiveNavUser(searchSuggestions.users.length - 1);
+      } else {
+        setActiveNavUser((prev) => prev - 1);
+      }
+    } else if (e.keyCode == 13 && activeNavUser >= 0) {
+      //this is for selecting that user where navigation is, using enter key
+      handleSelectUser(searchSuggestions.users[activeNavUser]);
+      setActiveNavUser(-1);
     }
   };
 
@@ -94,10 +110,15 @@ function App() {
               handleInputChange(e.target.value);
             }}
           />
+          {/* suggestions box */}
           <ul className="suggetstion-list">
-            {searchSuggestions?.users?.map((user) => {
+            {searchSuggestions?.users?.map((user, index) => {
               return !selectedUserSet.has(user.email) ? (
-                <li key={user.email} onClick={() => handleSelectUser(user)}>
+                <li
+                  key={user.email}
+                  onClick={() => handleSelectUser(user)}
+                  className={activeNavUser === index ? "active" : ""}
+                >
                   <img
                     src={user.image}
                     alt={`${user.firstName} ${user.lastName}`}

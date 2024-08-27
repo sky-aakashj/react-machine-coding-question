@@ -54,6 +54,9 @@ h1 {
 .suggetstion-list li:hover {
   background-color: #ccc;
 }
+.active {
+  background-color: #ccc;
+}
 
 .suggetstion-list li img {
   height: 20px;
