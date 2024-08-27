@@ -8,26 +8,37 @@ function App() {
   const [selectedUser, setSelectedUser] = useState([]);
   const [selectedUserSet, setSelectedUserSet] = useState(new Set());
   const ref = useRef(null);
+  let timerRef = useRef(null);
 
   // 'https://dummyjson.com/users/search?q=John'
   const handleInputChange = (value) => {
     setSearchValues(value);
   };
 
-  useEffect(() => {
-    const fetchUsers = () => {
-      if (searchValues.trim() === "") {
-        setSearchSuggestions([]);
-        return;
-      }
-      fetch(`https://dummyjson.com/users/search?q=${searchValues}`)
-        .then((res) => res.json())
-        .then((data) => setSearchSuggestions(data))
-        .catch((err) => {
-          console.log(err);
-        });
+  const debounce = (func, time) => {
+    return function (...args) {
+      clearTimeout(timerRef.current);
+      timerRef.current = setTimeout(() => {
+        func(...args);
+      }, time);
     };
-    fetchUsers();
+  };
+  const fetchUsers = () => {
+    if (searchValues.trim() === "") {
+      setSearchSuggestions([]);
+      return;
+    }
+    fetch(`https://dummyjson.com/users/search?q=${searchValues}`)
+      .then((res) => res.json())
+      .then((data) => setSearchSuggestions(data))
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const debouncedFetchUsers = debounce(fetchUsers, 200);
+
+  useEffect(() => {
+    debouncedFetchUsers();
   }, [searchValues]);
 
   const handleSelectUser = (user) => {
